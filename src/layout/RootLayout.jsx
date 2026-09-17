@@ -1,14 +1,13 @@
-
-import { Outlet } from 'react-router';
-import Navbar from '../Components/Navbar';
+import { Outlet } from "react-router";
 
 const RootLayout = () => {
-    return (
-        <div className='min-h-screen flex justify-center items-center'>
-            <Navbar/>
-            <Outlet/>
-        </div>
-    );
+  return (
+    <>
+      <div className="min-h-screen">
+        <Outlet />
+      </div>
+    </>
+  );
 };
 
 export default RootLayout;
