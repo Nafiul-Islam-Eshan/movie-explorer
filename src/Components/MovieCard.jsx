@@ -53,12 +53,12 @@ import { useState } from "react";
 const MovieCard = ({ movie }) => {
   const [modalMovie, setModalMovie] = useState(null);
 
-  const { name, rating, schedule, image } = movie;
+  const {id, name, rating, schedule, image } = movie;
   //   console.log();
 
   const handleButton = () => {
     setModalMovie(movie)
-    document.getElementById("my_modal_3").showModal();
+    document.getElementById(`my_modal_${id}`).showModal();
   };
 
   return (
@@ -88,7 +88,7 @@ const MovieCard = ({ movie }) => {
           <FaArrowRight />{" "}
         </span>
       </button>
-      <MovieModal modalMovie={modalMovie} />
+      {modalMovie && <MovieModal modalMovie={modalMovie} />}
     </div>
   );
 };
