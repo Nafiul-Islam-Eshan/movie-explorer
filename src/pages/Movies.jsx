@@ -1,14 +1,22 @@
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navbar";
+
+import Loading from "../Components/Loading";
+import MovieGrid from "../Components/MovieGrid";
+
+import useMovies from "../hooks/useMovies";
 
 const Movies = () => {
+  const { movies, loading } = useMovies();
+
   return (
     <>
-      <Navbar />
-      <div className="text-5xl font-bold font-mono text-rose-950">
-        This is movies page.
-      </div>
-      <Footer />
+      
+      {loading ? (
+        <div className="flex justify-center items-center">
+            <Loading />
+        </div>
+      ) : (
+        <MovieGrid movies={movies} />
+      )}
     </>
   );
 };
